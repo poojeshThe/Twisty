@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff157580" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewFlipper android:id="@id/payment_report_flipper" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ScrollView android:orientation="vertical" android:id="@id/select_params_view" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RelativeLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <AutoCompleteTextView android:ellipsize="end" android:id="@id/autotxt_customer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:hint="CUSTOMER" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:imeOptions="flagNoExtractUi" />
+                <TextView android:id="@id/txt_from_date_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="From: " android:layout_below="@id/autotxt_customer" />
+                <DatePicker android:id="@id/datePicker_from" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/txt_from_date_lbl" android:layout_below="@id/autotxt_customer" android:layout_alignBaseline="@id/txt_from_date_lbl" />
+                <TextView android:id="@id/txt_to_date_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="To: " android:layout_below="@id/datePicker_from" android:layout_alignLeft="@id/txt_from_date_lbl" />
+                <DatePicker android:id="@id/datePicker_to" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/txt_to_date_lbl" android:layout_below="@id/datePicker_from" android:layout_alignBaseline="@id/txt_to_date_lbl" android:layout_alignLeft="@id/datePicker_from" />
+                <Button android:id="@id/btn_gen_payment_report" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="Generate Report" android:layout_below="@id/datePicker_to" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </ScrollView>
+        <ListView android:textSize="16.0dip" android:id="@id/payment_report_list" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </ViewFlipper>
+</LinearLayout>

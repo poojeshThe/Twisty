@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WiFy</string>
+    <string name="app_version">2.10</string>
+    <string name="server_url">http://118.67.249.93:8080/FortuneServer</string>
+    <string name="buy_activity">Sales</string>
+    <string name="reports_activity">Reports</string>
+    <string name="sales_reports_activity">Sales Report</string>
+    <string name="winning_reports_activity">Winning Report</string>
+    <string name="result_entry_reports_activity">Result Entry Report</string>
+    <string name="set_cred_limit_activity">Set Customer Credit Limit</string>
+    <string name="set_lott_rate_activity">Set Lottery Rate</string>
+    <string name="payment_given_rept_activity">Payment Given</string>
+    <string name="netpay_rept_activity">Net Pay</string>
+    <string name="add_customer_activity">Add Customer</string>
+    <string name="edit_sales_activity">Edit Sales</string>
+    <string name="sales_types_prompt">Any</string>
+    <string name="no_list_data">Enter the required numbers and press OK.</string>
+</resources>

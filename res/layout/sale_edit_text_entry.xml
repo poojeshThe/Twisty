@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/txt_lot_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Number" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+    <EditText android:id="@id/txt_lot_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Count" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+</LinearLayout>

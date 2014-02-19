@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff157580" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:id="@id/txt_sales_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Bill No." android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+        <Button android:id="@id/btn_get_sales_details" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Get Details" />
+        <Button android:id="@id/btn_delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Delete" />
+        <Button android:id="@id/btn_save_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Save Edit" />
+    </LinearLayout>
+    <TextView android:id="@id/txt_sale_info_summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+    <ListView android:orientation="vertical" android:id="@id/sales_details_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

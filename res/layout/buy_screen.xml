@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/buy_screen_relativeLayout" android:background="#ff157580" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:orientation="horizontal" android:id="@id/radio_typeselect" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/radio_type1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" />
+        <RadioButton android:id="@id/radio_type2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2" />
+        <RadioButton android:id="@id/radio_type3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="3" />
+    </RadioGroup>
+    <AutoCompleteTextView android:ellipsize="end" android:id="@id/autotxt_customer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:hint="CUSTOMER" android:singleLine="true" android:layout_toLeftOf="@id/btn_new_customer" android:layout_toRightOf="@id/radio_typeselect" android:layout_alignParentTop="true" android:imeOptions="flagNoExtractUi">
+        <requestFocus />
+    </AutoCompleteTextView>
+    <Button android:id="@id/btn_new_customer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="New" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <RelativeLayout android:id="@id/sales_lot_select" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/radio_typeselect" android:layout_alignParentLeft="true">
+        <Spinner android:entries="@array/static_lot_array" android:id="@id/spinner_lotnames" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/radio_bookbundle" android:layout_alignParentLeft="true" />
+        <RadioGroup android:orientation="horizontal" android:id="@id/radio_bookbundle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+            <ToggleButton android:id="@id/toggleButton_book" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textOn="Book" android:textOff="Book" android:text="Book" android:onClick="onToggle" />
+            <ToggleButton android:id="@id/toggleButton_any" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textOn="Any" android:textOff="Any" android:text="Any" android:onClick="onToggle" />
+        </RadioGroup>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/sales_table" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/sales_navigation_btns" android:layout_below="@id/sales_lot_select">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ViewFlipper android:id="@id/sales_row_flipper" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:id="@id/sales_default_row" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <EditText android:id="@id/txt_lot_default_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Number" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+                    <EditText android:id="@id/txt_lot_default_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Count" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+                    <Button android:id="@id/btn_commit_default_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" OK " />
+                </LinearLayout>
+                <LinearLayout android:id="@id/sales_any_row" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <EditText android:id="@id/txt_lot_any_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Start" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+                    <EditText android:id="@id/txt_lot_any_end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="End" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+                    <EditText android:id="@id/txt_lot_any_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Count" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+                    <Button android:id="@id/btn_commit_any_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" OK " />
+                </LinearLayout>
+                <LinearLayout android:id="@id/sales_book_row" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/txt_lot_book_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Book Start: " />
+                    <EditText android:id="@id/txt_lot_book_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="Start" android:singleLine="true" android:digits="0123456789" android:inputType="phone" android:imeOptions="flagNoExtractUi" />
+                    <TextView android:id="@id/txt_lot_book_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Count: 5" />
+                    <Button android:id="@id/btn_commit_book_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" OK " />
+                </LinearLayout>
+            </ViewFlipper>
+            <LinearLayout android:orientation="vertical" android:id="@id/sale_info_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="10.0dip" android:id="@id/total_count_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Count: " />
+                    <TextView android:textSize="12.0dip" android:textStyle="bold" android:textColor="#ff10e000" android:id="@id/total_count_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/total_amt_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="10.0dip" android:id="@id/total_amt_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Amt: " />
+                    <TextView android:textSize="12.0dip" android:textStyle="bold" android:textColor="#ff10e000" android:id="@id/total_amt_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.0" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <ListView android:orientation="vertical" android:id="@id/list_sales_log" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/sales_navigation_btns" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_alignParentBottom="true">
+        <Button android:id="@id/btn_commit_sales" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Save All" />
+        <Button android:id="@id/btn_edit_sales" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Edit/Delete Sales" />
+        <Button android:id="@id/btn_more" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="More ..." />
+    </LinearLayout>
+</RelativeLayout>

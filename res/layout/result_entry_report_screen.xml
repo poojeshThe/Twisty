@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff157580" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewFlipper android:id="@id/result_entry_report_flipper" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ScrollView android:orientation="vertical" android:id="@id/select_params_view" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/txt_lot_type_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Type: " />
+                    <RadioGroup android:orientation="horizontal" android:id="@id/radio_typeselect" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <RadioButton android:id="@id/radio_type1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" />
+                        <RadioButton android:id="@id/radio_type2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2" />
+                        <RadioButton android:id="@id/radio_type3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="3" />
+                    </RadioGroup>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/txt_lot_spinner_lbl" android:layout_width="50.0dip" android:layout_height="wrap_content" android:text="Lottery: " />
+                    <Spinner android:id="@id/spinner_lotnames" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/txt_from_date_lbl" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="From: " />
+                    <DatePicker android:id="@id/datePicker_from" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:id="@id/txt_to_date_lbl" android:layout_width="50.0dip" android:layout_height="wrap_content" android:text="To: " />
+                    <DatePicker android:id="@id/datePicker_to" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <Button android:layout_gravity="center" android:id="@id/btn_gen_result_entry_report" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="Generate Report" />
+            </LinearLayout>
+        </ScrollView>
+        <ListView android:textSize="16.0dip" android:id="@id/result_entry_report_list" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </ViewFlipper>
+</LinearLayout>

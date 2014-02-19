@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff157580" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewFlipper android:id="@id/winning_report_flipper" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ScrollView android:orientation="vertical" android:id="@id/select_params_view" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <RelativeLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:id="@id/txt_bill_no_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="Bill No: " android:digits="0123456789" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:inputType="phone" />
+                <EditText android:id="@id/txt_bill_no" android:layout_width="100.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/txt_bill_no_txt" android:layout_alignBaseline="@id/txt_bill_no_txt" android:inputType="number" android:imeOptions="flagNoExtractUi" />
+                <AutoCompleteTextView android:ellipsize="end" android:id="@id/autotxt_customer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="6.0dip" android:hint="CUSTOMER" android:singleLine="true" android:layout_toRightOf="@id/txt_bill_no" android:layout_alignTop="@id/txt_bill_no" android:imeOptions="flagNoExtractUi" />
+                <TextView android:id="@id/txt_from_date_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="From: " android:layout_below="@id/txt_bill_no_txt" />
+                <DatePicker android:id="@id/datePicker_from" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/txt_from_date_lbl" android:layout_below="@id/txt_bill_no_txt" android:layout_alignBaseline="@id/txt_from_date_lbl" />
+                <TextView android:id="@id/txt_to_date_lbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="To: " android:layout_below="@id/datePicker_from" android:layout_alignLeft="@id/txt_from_date_lbl" />
+                <DatePicker android:id="@id/datePicker_to" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/txt_to_date_lbl" android:layout_below="@id/datePicker_from" android:layout_alignBaseline="@id/txt_to_date_lbl" android:layout_alignLeft="@id/datePicker_from" />
+                <Button android:id="@id/btn_gen_winning_report" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="Generate Winning Report" android:layout_below="@id/datePicker_to" android:layout_centerHorizontal="true" />
+                <Button android:id="@id/btn_gen_winning_customers" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select by Winning Customers" android:layout_below="@id/btn_gen_winning_report" android:layout_centerHorizontal="true" />
+                <Button android:id="@id/btn_gen_winning_billnos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Select by Winning Bill No.s" android:layout_below="@id/btn_gen_winning_customers" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </ScrollView>
+        <RelativeLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <ListView android:textSize="16.0dip" android:id="@id/winning_report_list" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/winning_summary_layout" android:layout_alignParentTop="true" />
+            <LinearLayout android:orientation="vertical" android:id="@id/winning_summary_layout" android:background="#ff356560" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="10.0dip" android:id="@id/grand_total_lbl" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="Grand Total: " />
+                    <TextView android:textSize="10.0dip" android:textStyle="bold" android:gravity="right" android:id="@id/grand_total_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="10.0dip" android:id="@id/total_prize_lbl" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="Total Prize Amt: " />
+                    <TextView android:textSize="10.0dip" android:textStyle="bold" android:gravity="right" android:id="@id/total_prize_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/total_s_amt_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="10.0dip" android:id="@id/total_s_amt_lbl" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="Total Stockist Amt: " />
+                    <TextView android:textSize="10.0dip" android:textStyle="bold" android:gravity="right" android:id="@id/total_s_amt_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/total_ss_amt_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="10.0dip" android:id="@id/total_ss_amt_lbl" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="Total SubStockist Amt: " />
+                    <TextView android:textSize="10.0dip" android:textStyle="bold" android:gravity="right" android:id="@id/total_ss_amt_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/total_a_amt_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="10.0dip" android:id="@id/total_a_amt_lbl" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="Total Agent Amt: " />
+                    <TextView android:textSize="10.0dip" android:textStyle="bold" android:gravity="right" android:id="@id/total_a_amt_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ViewFlipper>
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="@integer/app_version_code" android:versionName="@string/app_version" package="com.fortune.restful"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+        <activity android:label="@string/buy_activity" android:name=".activities.BuyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan" />
+        <activity android:label="@string/reports_activity" android:name=".activities.ReportsActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/sales_reports_activity" android:name=".activities.SalesReportsActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/winning_reports_activity" android:name=".activities.WinningReportsActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/result_entry_reports_activity" android:name=".activities.ResultEntryReportsActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/set_cred_limit_activity" android:name=".activities.SetCredLimitActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/add_customer_activity" android:name=".activities.AddCustomerActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/edit_sales_activity" android:name=".activities.EditSalesActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/set_lott_rate_activity" android:name=".activities.SetLottRateActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/payment_given_rept_activity" android:name=".activities.PaymentGivenReportActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/netpay_rept_activity" android:name=".activities.NetPayReportActivity" android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" android:name=".activities.LoginActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.fortune.restful.webservice.WebReceiver" />
+        <service android:name="com.fortune.restful.webservice.WebService" />
+    </application>
+</manifest>

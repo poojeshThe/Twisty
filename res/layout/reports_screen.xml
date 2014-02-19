@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="#ff157580" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:layout_gravity="center" android:id="@id/sales_report_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sales Report" />
+    <Button android:layout_gravity="center" android:id="@id/netpay_report_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Net Pay Report" />
+    <Button android:layout_gravity="center" android:id="@id/winning_report_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Winning Report" />
+    <Button android:layout_gravity="center" android:id="@id/result_entry_report_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Result Entry Report" />
+    <Button android:layout_gravity="center" android:id="@id/payment_given_report_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Payment Given Report" />
+</LinearLayout>

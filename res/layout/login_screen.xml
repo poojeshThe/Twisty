@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff157580" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0dip" android:layout_gravity="center" android:id="@id/welcome_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="" />
+    <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true">
+        <TextView android:id="@id/username_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="username:" android:layout_centerHorizontal="true" />
+        <EditText android:id="@id/txt_username" android:layout_width="250.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/username_text" android:layout_centerHorizontal="true" android:inputType="textNoSuggestions" android:imeOptions="flagNoExtractUi" />
+        <TextView android:id="@id/password_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="password:" android:layout_below="@id/txt_username" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <EditText android:id="@id/txt_password" android:layout_width="250.0dip" android:layout_height="wrap_content" android:password="true" android:singleLine="true" android:layout_below="@id/password_text" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:imeOptions="flagNoExtractUi" />
+        <Button android:id="@id/login_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Login!" android:layout_below="@id/txt_password" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>
